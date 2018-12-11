@@ -1,0 +1,134 @@
+/*Inspired by Basecamp Register form */
+
+@keyframes shake{
+    0%, 100% {
+      transform: translateX(0);
+  }
+
+  10%, 30%, 50%, 70%, 90% {
+    transform: translateX(-10px);
+  }
+
+  20%, 40%, 60%, 80% {
+    transform: translateX(10px);
+  }
+}
+
+@import url(https://fonts.googleapis.com/css?family=Jolly+Lodger);
+
+body{
+  font-family: "Comic Sans MS", cursive, sans-serif;
+  font-size: 0.8em
+}
+html{
+  height: 100%;
+  /* background-color: red; */
+  width: 100%;
+  background-image: url(https://img.purch.com/w/660/aHR0cDovL3d3dy5saXZlc2NpZW5jZS5jb20vaW1hZ2VzL2kvMDAwLzA5OS83NTgvb3JpZ2luYWwvc3RhcnMtdW5pdmVyc2UuanBn);
+  background-size: cover;                      /* <------ */
+  background-repeat:   no-repeat;
+  background-position: center center;
+}
+.container{
+  position: absolute;
+  top: 0;
+  left: -42px;
+  right: 0;
+  bottom: 0;
+  margin: auto;
+  width: 800px;
+  height: 563px;
+}
+
+.dolly{
+  position: relative;
+  width: 250px;
+  height: 450px;
+  float: left;
+  background: url('https://www.animaker.com/assets/images/icons/comic-male.png') no-repeat;
+}
+.error .dolly::before{
+  content: '';
+  display: block;
+  position: absolute;
+  top: 66px; right: -49px;
+  width: 205px;
+  height: 160px;
+  background: url('https://s3-us-west-2.amazonaws.com/s.cdpn.io/4848/dolly_bad.jpg') no-repeat;
+}
+/*.dolly::after{
+  content: '';
+  display: block;
+  position: absolute;
+  
+  width: 170px;
+  height: 74px;
+  background: url('https://s3-us-west-2.amazonaws.com/s.cdpn.io/4848/arm.png') no-repeat;
+}
+*/
+[data-position='1'] .dolly::after{
+  top: 130px;
+  right: -70px;
+}
+[data-position='2'] .dolly::after{
+  top: 165px;
+  right: -62px;
+  transform: rotate(30deg);
+}
+[data-position='3'] .dolly::after{
+  top: 184px;
+  right: -40px;
+  transform: rotate(60deg);
+}
+
+
+.register{
+  width: 500px;
+  margin-top: 20px;
+  float: right;
+}
+
+.dolly .credit{
+    position: absolute;
+    bottom: 35px;
+    right: -10px;
+    font-size: 1em;
+    text-decoration: none;
+    color: #000;
+   
+}
+
+label {
+  display:block;
+  margin-bottom: 5px;
+  font-size: 2.1em;
+  color: #7a3e1a;
+}
+.input-txt{
+  box-sizing: border-box;
+  padding: .4rem .9rem;
+  width: 500px;
+  margin-bottom: 1rem;
+  border: 1px solid #3fb0da;
+  color: #444;
+  border-radius: 4px;
+  font-size: 1.3em;
+  height: 55px;
+}
+.error .input-txt:focus{
+  border: 1px solid red;
+  animation: shake .65s;
+}
+button[type=submit]{
+  box-sizing: border-box;
+  display:block;
+  padding: 8px 30px 10px 30px;
+  margin-top: 10px;
+  width: 300px;
+  text-shadow: 0 1px 1px #fff;
+  border: 1px solid #7f3f1b;
+  border-radius: 4px;
+  color: #7a3e1a;
+  font-size: 1.2em;
+  background-image: linear-gradient(#e4d730,#998002);
+}
